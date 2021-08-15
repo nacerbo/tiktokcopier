@@ -43,7 +43,9 @@ def downloadHashtag(tag, n_videos, headers_dict):
             # sleep(5)
             continue
         if validators.url(rJson['url_nwm']):
-            video = requests.get(rJson['url_nwm'], allow_redirects=True)
+            video_fetch = requests.post("http://178.18.242.66/api/v1/fetch-videos/{}".format(vid_id), headers=headers_dict)
+            video = requests.get("http://178.18.242.66/download?id={}&type=video&nwm=true".format(vid_id), headers=headers_dict)
+            # video = requests.get(rJson['url_nwm'], allow_redirects=True)
             if validators.url(thumbnail):
                 thumbnail = requests.get(thumbnail, allow_redirects=True)
             

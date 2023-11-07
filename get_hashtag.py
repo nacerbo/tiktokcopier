@@ -3,10 +3,10 @@ import mysql.connector
 
 
 mydb = mysql.connector.connect(
-  host="5.189.176.126",
-  user="admin",
-  password="CMFB8LXQG7ADF2b",
-  database="Amir_tiktok_downloads"
+  host="",
+  user="",
+  password="",
+  database=""
 )
 
 def getHashtag(tag):
